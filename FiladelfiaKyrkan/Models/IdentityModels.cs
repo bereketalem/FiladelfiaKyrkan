@@ -29,5 +29,7 @@ namespace FiladelfiaKyrkan.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<FiladelfiaKyrkan.Models.SubmissionForm> SubmissionForms { get; set; }
     }
 }
