@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using FiladelfiaKyrkan.Models;
+using Microsoft.AspNet.Identity;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
-using FiladelfiaKyrkan.Models;
-using Microsoft.AspNet.Identity;
 
 namespace FiladelfiaKyrkan.Controllers
 {
@@ -37,20 +33,35 @@ namespace FiladelfiaKyrkan.Controllers
         }
 
         // GET: SubmissionForms/Create
-        public ActionResult Create()
+        [Authorize]
+        public ActionResult Create(string ministry)
         {
-            return View();
+            switch (ministry)
+            {
+                case "Womens Ministry":
+                    return View("CreateWomen");
+                case "Children Ministry":
+                    return View("CreateChildren");
+                case "Team Ministry":
+                    return View("CreateTeam");
+                default:
+                    return HttpNotFound();
+            }
+
+            return View(new SubmissionForm { MinistryName = ministry });
         }
 
         // POST: SubmissionForms/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Message")] SubmissionForm submissionForm)
+        public ActionResult Create([Bind(Include = "Id,Message,MinistryName")] SubmissionForm submissionForm)
         {
             if (ModelState.IsValid)
             {
+
                 submissionForm.User = db.Users.Find(User.Identity.GetUserId());
                 db.SubmissionForms.Add(submissionForm);
                 db.SaveChanges();

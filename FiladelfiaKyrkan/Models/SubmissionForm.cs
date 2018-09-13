@@ -10,5 +10,6 @@ namespace FiladelfiaKyrkan.Models
         public int Id { get; set; }
         public virtual ApplicationUser User  { get; set; }
         public string Message { get; set; }
+        public string MinistryName { get; set; }
     }
 }

@@ -1,8 +1,7 @@
-﻿using System.Data.Entity;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System.Security.Claims;
 using System.Threading.Tasks;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace FiladelfiaKyrkan.Models
 {
@@ -16,6 +15,8 @@ namespace FiladelfiaKyrkan.Models
             // Add custom user claims here
             return userIdentity;
         }
+
+        public string Name { get; set; }
     }
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>

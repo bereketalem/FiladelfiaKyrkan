@@ -205,6 +205,18 @@
     <Compile Include="Migrations\201809110851129_church.Designer.cs">
       <DependentUpon>201809110851129_church.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809110940587_submission.cs" />
+    <Compile Include="Migrations\201809110940587_submission.Designer.cs">
+      <DependentUpon>201809110940587_submission.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809111050350_ministryname.cs" />
+    <Compile Include="Migrations\201809111050350_ministryname.Designer.cs">
+      <DependentUpon>201809111050350_ministryname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809130824198_addingName.cs" />
+    <Compile Include="Migrations\201809130824198_addingName.Designer.cs">
+      <DependentUpon>201809130824198_addingName.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -222,11 +234,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\736115_247973858666373_1046014483_o.jpg" />
+    <Content Include="Images\download.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\FiladelfiaKyrkan - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\FiladelfiaKyrkan20180912100151 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -277,6 +293,9 @@
     <Content Include="Views\SubmissionForms\Details.cshtml" />
     <Content Include="Views\SubmissionForms\Edit.cshtml" />
     <Content Include="Views\SubmissionForms\Index.cshtml" />
+    <Content Include="Views\SubmissionForms\CreateChildren.cshtml" />
+    <Content Include="Views\SubmissionForms\CreateWomen.cshtml" />
+    <Content Include="Views\SubmissionForms\CreateTeam.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -297,6 +316,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201809110851129_church.resx">
       <DependentUpon>201809110851129_church.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809110940587_submission.resx">
+      <DependentUpon>201809110940587_submission.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809111050350_ministryname.resx">
+      <DependentUpon>201809111050350_ministryname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809130824198_addingName.resx">
+      <DependentUpon>201809130824198_addingName.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

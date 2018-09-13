@@ -22,3 +22,39 @@ select,
 textarea {
     max-width: 280px;
 }
+.Logo, img {
+    max-width: 150px;
+    margin-top: -1px;
+}
+.dropup, .dropdown {
+    position: relative;
+    padding: 10px 15px;
+}
+.navbar-inverse {
+    background-color: #ff4342;
+    border-color: #ff4342;
+}
+    .navbar-inverse .navbar-nav > li > a {
+        color: #ffffff;
+    }
+.btn-default {
+    color: #fff;
+    background-color: #ff4342;
+    border-color: #ccc;
+}
+.Church  {
+    width: 1200px;
+    height: 300px;
+    overflow: hidden;
+}
+    .Church h1, .lead {
+        color: #ffffff;
+    }
+    .jumbotron {
+    background-image: url('../Images/736115_247973858666373_1046014483_o.jpg');
+    background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y: 50%;
+        background-size:100%
+    
+}

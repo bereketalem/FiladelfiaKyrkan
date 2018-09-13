@@ -1,0 +1,48 @@
+﻿@model FiladelfiaKyrkan.Models.SubmissionForm
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Children Ministry</h2>
+<p>ህጻናት ደቅና፣ ከም ኣብ ስደት ዝነብሩ ዘለዉ መጠን፣ እቲ ከም ወለዲ ከነውርሶምን ካብ ወለዶም ድማ ክመሃርዎን እንደልዮ ብፈሪሃ ኣምላኽ ምምልላስን ባህሎምን ክብርታቶምን ንምሕላውን መታን ክኽእሉ፣ ቤተክርስትያንና ከም ሓላፍነታ ወሲዳ እትዋስኣሉ ባይታ እዩ፣፣ በዚ መሰረት ድማ፣ ኩሉ ግዜ ሰንበት፣ ትግርኛን ኢንግልዝኛን ብዝመልኩ መምህራን ኣቢላ ትምህርቲ መጽሓፍ ቅዱስን መዛሙር ትግርኛን ዛንታታት ትግርኛን ብምምሃር ተገልግል፣፣</p>
+
+<p>If you would like to serve with one of our children teams, please write a message below.</p>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>SubmissionForm</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+            </div>
+            <input style="visibility: hidden; display: none;" value="Children's Ministry"  name="MinistryName" id="MinistryName"/>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+    <div>
+        @if (User.IsInRole("Admin"))
+        {
+            @Html.ActionLink("Back to List", "Index")
+        }
+    </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
